@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Mea+Culpa&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ====== BASICS ====== */  
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #111;
+}
+canvas {
+    display: block;
+    width: 100%; height: 100%; 
+}
+
+/* ====== MUSIC ====== */
+
+#muteBtn {
+    position: fixed;
+    top: 20px;
+    width: 170px;
+    right: 20px;
+    padding: 10px 20px;
+    font-family: "Orbitron", sans-serif; 
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+/* ====== RESUME ====== */
+
+#resume {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 248, 248, 0.2); 
+    backdrop-filter: blue(8px);
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+#text {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;   
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    font-family: "Grechen Fuemen", sans-serif;
+    color: rgb(0, 141, 151);
+    text-shadow: 10px 10px 4px rgba(0, 0, 5, 0.855);
+    -webkit-text-stroke: 1px rgb(0, 32, 106);
+    margin: 10px;
+}
+
+/* ====== TIMER ======*/
+
+#timer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items:end;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+#buttons {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content:space-evenly;
+    gap: 4px;
+    min-width: 10px;
+ 
+}
+
+
+#countdown {
+    color: rgb(255, 255, 255);
+    z-index: auto;
+    text-shadow: 7px 10px 6px rgba(0, 0, 5, 0.855);
+    -webkit-text-stroke: 1px rgb(47, 51, 60);
+    font-family: "Grechen Fuemen", sans-serif;
+    margin-top:40px;
+    font-size: 40px;;
+}
+
+#wrapper{
+    flex-direction: column;
+    display: flex;
+    background-color: rgba(1, 0, 6, 0.66);
+    width: 90%;
+    border-radius: 100px;
+    max-width: 500px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    pointer-events: auto;
+}
+
+/*buttons*/
+
+button {
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 10px;
+ padding-top: 10px;
+ border-radius: 9px;
+ background: #111;
+ border: 2px solid #444;
+ color: #ffffff;
+ font-family: inherit;
+ text-align: center;
+ cursor: pointer;
+ transition: 0.4s;
+ border-radius: 8px;
+}
+
+button:hover {
+ box-shadow: 5px 10px 50px 10px #211c55;
+}
+
+button:active {
+ transform: scale(0.97);
+ background: #807979;
+ box-shadow: 7px 5px 56px -10px #1305a7;
+}
+
+
+#choose {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    padding-top: 1px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin: 5px;
+}
+
+/* ====== SETTINGS ====== */
+
+#settingsPanel{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+}
+
+#settingsWrapper {
+    display: flex;
+    pointer-events: auto;
+    width: 500px;
+    max-width: 500px;
+    min-width: 100px;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: rgba(1, 0, 6, 0.66);
+    border-radius: 20px;
+}
+
+/* INPUT BOX */
+.inputbox {
+  position: relative;
+  width: 196px;
+}
+
+.inputbox input {
+  position: relative;
+  width: 90%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+  background-color: #2525256e;
+  
+}
+
+.inputbox span {
+  position: absolute;
+
+  left: 0;
+  padding: 20px 10px 10px;
+  font-size: 1em;
+  color: #ffffff;
+  letter-spacing: 00.05em;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.inputbox input:valid ~span,
+.inputbox input:focus ~span {
+  color: #3d2c7f;
+  transform: translateX(-10px) translateY(-34px);
+  font-size: 0,75em;
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #1f1d4e;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.inputbox input:valid ~i,
+.inputbox input:focus ~i {
+  height: 44px;
+}
+
+/* ====== HIDE GUI ====== */
+
+/* From Uiverse.io by catraco */ 
+/*------ Settings ------*/
+.container {
+  --color: #a5a5b0;
+  --size: 30px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  font-size: var(--size);
+  user-select: none;
+  fill: var(--color);
+}
+
+.container .eye {
+  position: absolute;
+  animation: keyframes-fill .5s;
+}
+
+.container .eye-slash {
+  position: absolute;
+  animation: keyframes-fill .5s;
+  display: none;
+}
+
+/* ------ On check event ------ */
+.container input:checked ~ .eye  {
+  display: none;
+}
+
+
+.container input:checked ~ .eye-slash {
+  display: block;
+}
+
+/* ------ Hide the default checkbox ------ */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* ------ Animation ------ */
+@keyframes keyframes-fill {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
