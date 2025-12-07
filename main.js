@@ -38,6 +38,7 @@ Promise.all([
 });
 
 function startScene(){
+    document.getElementById("resume").style.display = "None";
     
     //CREATING THE WORLD 
     const geoDetail = IsOnMobile ? 4 : 8;
@@ -131,12 +132,6 @@ function startScene(){
      * HIDE TIMER OPTION - DONE
      */
 
-    function resume(){
-        let x = document.getElementById("resume");
-
-        x.style.display = "none";
-    }
-
     function onWindowResize(){
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
@@ -155,8 +150,6 @@ function startScene(){
 
 
     document.addEventListener('click', () => {
-
-        resume();
 
         if(!listener){
             listener = new t.AudioListener();
