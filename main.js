@@ -41,7 +41,7 @@ function startScene(){
     document.getElementById("resume").style.display = "None";
     
     //CREATING THE WORLD 
-    const geoDetail = IsOnMobile ? 4 : 8;
+    const geoDetail = IsOnMobile ? 6 : 8;
     const circleGeo = new t.IcosahedronGeometry(1.0, geoDetail);
     const circleGeo2 = new t.IcosahedronGeometry(0.2, geoDetail); 
     const color = new t.MeshStandardMaterial({
